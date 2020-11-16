@@ -19,7 +19,7 @@ export default class ResponsiveLocalStorageLayout extends React.PureComponent {
   static get defaultProps() {
     return {
       className: "layout",
-      cols: { lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 },
+      cols: { xl: 12, lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 },
       rowHeight: 50
     };
   }
@@ -39,32 +39,36 @@ export default class ResponsiveLocalStorageLayout extends React.PureComponent {
         <button onClick={() => this.resetLayout()}>Reset Layout</button>
         <ResponsiveReactGridLayout
           className="layout"
-          breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}
-          cols={{ lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 }}
-          rowHeight={50}
+          breakpoints={{ xl: 1800, lg: 1440, md: 996, sm: 768, xs: 480, xxs: 0 }}
+          cols={{ xl: 12, lg: 9, md: 6, sm: 3, xs: 3, xxs: 3 }}
+          rowHeight={30}
           layouts={this.state.layouts}
+          isBounded={true}
+          resizeHandles={['e', 'w']}
+          margin={[30, 30]}
           onLayoutChange={(layout, layouts) =>
             this.onLayoutChange(layout, layouts)
           }
         >
-          <div key="1" data-grid={{ w: 4, h: 8, x: 0, y: 0, minW: 2, minH: 8, maxH: 8 }}>
+          <div key="1" data-grid={{ w: 3, h: 8, x: 0, y: 0, minW: 2, minH: 8, maxH: 8 }}>
             <span className="text">1</span>
           </div>
-          <div key="2" data-grid={{ w: 4, h: 8, x: 4, y: 0, minW: 2, minH: 8, maxH: 8 }}>
+          <div key="2" data-grid={{ w: 3, h: 8, x: 3, y: 0, minW: 2, minH: 8, maxH: 8 }}>
             <span className="text">2</span>
           </div>
-          <div key="3" data-grid={{ w: 4, h: 8, x: 8, y: 0, minW: 2, minH: 8, maxH: 8 }}>
+          <div key="3" data-grid={{ w: 3, h: 8, x: 6, y: 0, minW: 2, minH: 8, maxH: 8 }}>
             <span className="text">3</span>
           </div>
-          <div key="4" data-grid={{ w: 4, h: 8, x: 0, y: 8, minW: 2, minH: 8, maxH: 8 }}>
+          <div key="4" data-grid={{ w: 3, h: 8, x: 9, y: 8, minW: 2, minH: 8, maxH: 8 }}>
             <span className="text">4</span>
           </div>
-          <div key="5" data-grid={{ w: 4, h: 8, x: 4, y: 8, minW: 2, minH: 8, maxH: 8 }}>
+          <div key="5" data-grid={{ w: 3, h: 8, x: 0, y: 8, minW: 2, minH: 8, maxH: 8 }}>
             <span className="text">5</span>
           </div>
-          <div key="6" data-grid={{ w: 4, h: 8, x: 8, y: 8, minW: 2, minH: 8, maxH: 8 }}>
-            <span className="text">5</span>
+          <div key="6" data-grid={{ w: 3, h: 8, x: 3, y: 8, minW: 2, minH: 8, maxH: 8 }}>
+            <span className="text">6</span>
           </div>
+
         </ResponsiveReactGridLayout>
       </div>
     );

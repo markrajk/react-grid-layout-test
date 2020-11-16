@@ -41,7 +41,7 @@
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
-  border: 1px dashed #555;
+  border: 1.5px dashed #bbb;
 }
 
 .react-grid-item > .react-resizable-handle {
@@ -50,7 +50,11 @@
   height: 20px;
   bottom: 0;
   right: 0;
-  cursor: se-resize;
+  cursor: we-resize;
+  opacity: 0;
+  height: 100%;
+  transform: rotate(0) translate(0,-48%);
+  background-color: red;
 }
 
 .react-grid-item > .react-resizable-handle::after {
