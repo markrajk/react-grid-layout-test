@@ -1,5 +1,6 @@
 import React from "react";
 import { WidthProvider, Responsive } from "react-grid-layout";
+import BarGraph from './components/BarGraph';
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 const originalLayouts = getFromLS("layouts") || {};
@@ -36,7 +37,7 @@ export default class ResponsiveLocalStorageLayout extends React.PureComponent {
   render() {
     return (
       <div>
-        <button onClick={() => this.resetLayout()}>Reset Layout</button>
+        <button className="button button-primary" style={{ height: '36px', padding: '0 17px' }} onClick={() => this.resetLayout()}>Reset Layout</button>
         <ResponsiveReactGridLayout
           className="layout"
           breakpoints={{ xl: 1800, lg: 1440, md: 996, sm: 768, xs: 480, xxs: 0 }}
@@ -51,22 +52,22 @@ export default class ResponsiveLocalStorageLayout extends React.PureComponent {
           }
         >
           <div key="1" data-grid={{ w: 3, h: 8, x: 0, y: 0, minW: 2, minH: 8, maxH: 8 }}>
-            <span className="text">1</span>
+            <BarGraph />
           </div>
           <div key="2" data-grid={{ w: 3, h: 8, x: 3, y: 0, minW: 2, minH: 8, maxH: 8 }}>
-            <span className="text">2</span>
+            <BarGraph />
           </div>
           <div key="3" data-grid={{ w: 3, h: 8, x: 6, y: 0, minW: 2, minH: 8, maxH: 8 }}>
-            <span className="text">3</span>
+            <BarGraph />
           </div>
           <div key="4" data-grid={{ w: 3, h: 8, x: 9, y: 8, minW: 2, minH: 8, maxH: 8 }}>
-            <span className="text">4</span>
+            <BarGraph />
           </div>
           <div key="5" data-grid={{ w: 3, h: 8, x: 0, y: 8, minW: 2, minH: 8, maxH: 8 }}>
-            <span className="text">5</span>
+            <BarGraph />
           </div>
           <div key="6" data-grid={{ w: 3, h: 8, x: 3, y: 8, minW: 2, minH: 8, maxH: 8 }}>
-            <span className="text">6</span>
+            <BarGraph />
           </div>
 
         </ResponsiveReactGridLayout>
