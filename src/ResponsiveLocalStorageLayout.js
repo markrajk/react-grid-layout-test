@@ -1,6 +1,8 @@
 import React from "react";
 import { WidthProvider, Responsive } from "react-grid-layout";
 import BarGraph from './components/BarGraph';
+import LineGraph from './components/LineGraph';
+import LineGraphFancy from './components/LineGraphFancy';
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 const originalLayouts = getFromLS("layouts") || {};
@@ -55,10 +57,10 @@ export default class ResponsiveLocalStorageLayout extends React.PureComponent {
             <BarGraph />
           </div>
           <div key="2" data-grid={{ w: 3, h: 8, x: 3, y: 0, minW: 2, minH: 8, maxH: 8 }}>
-            <BarGraph />
+            <LineGraph data={[400,300,500,800,900,1000,400]} />
           </div>
           <div key="3" data-grid={{ w: 3, h: 8, x: 6, y: 0, minW: 2, minH: 8, maxH: 8 }}>
-            <BarGraph />
+           <LineGraphFancy  />
           </div>
           <div key="4" data-grid={{ w: 3, h: 8, x: 9, y: 8, minW: 2, minH: 8, maxH: 8 }}>
             <BarGraph />
