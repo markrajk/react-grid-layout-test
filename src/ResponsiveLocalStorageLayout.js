@@ -45,7 +45,7 @@ export default class ResponsiveLocalStorageLayout extends React.PureComponent {
           rowHeight={30}
           layouts={this.state.layouts}
           isBounded={true}
-          resizeHandles={['e', 'w']}
+          resizeHandles={['e']}
           margin={[30, 30]}
           onLayoutChange={(layout, layouts) =>
             this.onLayoutChange(layout, layouts)
